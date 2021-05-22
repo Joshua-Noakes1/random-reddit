@@ -30,7 +30,7 @@ app.use((req, res, next) => {
 
 
 // endpoints
-app.use('/reddit', reddit);
+app.use('/', reddit);
 
 app.get('/status', (req, res) => {
     res.status(200).json({

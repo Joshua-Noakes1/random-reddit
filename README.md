@@ -3,7 +3,7 @@
 
 Based on Rasesh2005's Reddit-Meme-API, random-reddit serves to get a random image from a subreddit while using NodeJS.
 ## Usage
-### /reddit
+### /
 By default this API gets images from r/pic, r/earthporn, r/spaceporn and r/itookapicture from what I can tell these subreddits are contain clean images and shouldn't give NSFW images back.
 ``` JSON
 "id":"nhydk8",
@@ -19,7 +19,7 @@ By default this API gets images from r/pic, r/earthporn, r/spaceporn and r/itook
 "createdUtc":1621618987
 ```
 
-### /reddit/{subreddit}
+### /{subreddit}
 You can supply your own subreddit at /reddit/{subreddit} where {subreddit} is the name, so for example "/reddit/NinoNakano"
 ``` JSON
 "id":"nfrcc3",
