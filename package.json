@@ -19,9 +19,11 @@
   },
   "homepage": "https://github.com/Joshua-Noakes1/random-reddit#readme",
   "dependencies": {
+    "@blad3mak3r/reddit-memes": "^0.2.5",
     "body-parser": "^1.19.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "node-fetch": "^2.6.1"
   }
 }

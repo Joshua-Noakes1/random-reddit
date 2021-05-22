@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
 // routes 
+const reddit = require('./endpoint/reddit/reddit');
 
 // dev
 app.use(morgan('dev'));
@@ -29,6 +30,7 @@ app.use((req, res, next) => {
 
 
 // endpoints
+app.use('/reddit', reddit);
 
 app.get('/status', (req, res) => {
     res.status(200).json({
