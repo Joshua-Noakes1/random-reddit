@@ -9,10 +9,8 @@ router.get('/', async (req, res, next) => {
     var reddit_image = await reddit.getReddit();
 
     // send 415 error if an error occurs in the code
-    if (reddit_image.message) {
-        res.status(415).json({
-            "message": "failed"
-        });
+    if (reddit_image.success == "false") {
+        res.status(415).json(reddit_image);
         return;
     }
 
@@ -25,10 +23,8 @@ router.get('/:subreddit', async (req, res, next) => {
     var reddit_image = await reddit.getReddit(req.params.subreddit);
 
     // send 415 error if an error occurs in the code
-    if (reddit_image.message) {
-        res.status(415).json({
-            "message": "failed"
-        });
+    if (reddit_image.success == "false") {
+        res.status(415).json(reddit_image);
         return;
     }
 

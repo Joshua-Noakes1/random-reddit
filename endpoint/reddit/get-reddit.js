@@ -12,11 +12,17 @@ async function getReddit(subreddit) {
     if (subreddit != undefined && subreddit != '') {
         try {
             // get images from user defined subreddit
-            return await getRandomMeme.getRandomMeme(subreddit);
+            var reddit = await getRandomMeme.getRandomMeme(subreddit);
+            return {
+                "success": "true",
+                reddit
+            }
+
         } catch (error) {
             console.error(error);
             return {
-                "message": "failed"
+                "success": "false",
+                "error": error.message
             }
         }
     } else {
@@ -24,11 +30,16 @@ async function getReddit(subreddit) {
             // get random subreddit from clean_images
             var clean_images = Math.floor(Math.random() * clean_subreddits.length);
             clean_images = clean_subreddits[clean_images];
-            return await getRandomMeme.getRandomMeme(clean_images);
+            var reddit = await getRandomMeme.getRandomMeme(clean_images);
+            return {
+                "success": "true",
+                reddit
+            };
         } catch (error) {
             console.error(error);
             return {
-                "message": "failed"
+                "success": false,
+                "error": error.message
             }
         }
     }
